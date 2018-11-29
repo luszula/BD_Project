@@ -1,0 +1,15 @@
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\Service.exe.config
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\Service.exe
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\Service.pdb
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.Properties.Resources.resources
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.csproj.GenerateResource.cache
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.exe
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.pdb
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.Form1.resources
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.Form2.resources
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\DataLayer.dll
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\DataLayer.pdb
+C:\Users\HelixV2\source\repos\Service\Service\bin\Debug\DataLayer.dll.config
+C:\Users\HelixV2\source\repos\Service\Service\obj\Debug\Service.csproj.CopyComplete

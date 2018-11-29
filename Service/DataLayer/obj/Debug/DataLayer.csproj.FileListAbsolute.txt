@@ -1,0 +1,7 @@
+C:\Users\HelixV2\source\repos\Service\DataLayer\bin\Debug\DataLayer.dll.config
+C:\Users\HelixV2\source\repos\Service\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\HelixV2\source\repos\Service\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\HelixV2\source\repos\Service\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+C:\Users\HelixV2\source\repos\Service\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\HelixV2\source\repos\Service\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\HelixV2\source\repos\Service\DataLayer\obj\Debug\DataLayer.pdb

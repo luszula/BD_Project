@@ -1,0 +1,10 @@
+C:\Users\HelixV2\source\repos\Service\BizzLayer\bin\Debug\BizzLayer.dll
+C:\Users\HelixV2\source\repos\Service\BizzLayer\bin\Debug\BizzLayer.pdb
+C:\Users\HelixV2\source\repos\Service\BizzLayer\obj\Debug\BizzLayer.csprojAssemblyReference.cache
+C:\Users\HelixV2\source\repos\Service\BizzLayer\obj\Debug\BizzLayer.csproj.CoreCompileInputs.cache
+C:\Users\HelixV2\source\repos\Service\BizzLayer\obj\Debug\BizzLayer.dll
+C:\Users\HelixV2\source\repos\Service\BizzLayer\obj\Debug\BizzLayer.pdb
+C:\Users\HelixV2\source\repos\Service\BizzLayer\bin\Debug\DataLayer.dll
+C:\Users\HelixV2\source\repos\Service\BizzLayer\bin\Debug\DataLayer.pdb
+C:\Users\HelixV2\source\repos\Service\BizzLayer\bin\Debug\DataLayer.dll.config
+C:\Users\HelixV2\source\repos\Service\BizzLayer\obj\Debug\BizzLayer.csproj.CopyComplete
