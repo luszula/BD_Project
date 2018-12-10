@@ -28,99 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.Display = new System.Windows.Forms.DataGridView();
-            this.id_act = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seq_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activity_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
+            this.display = new System.Windows.Forms.DataGridView();
+            this.appoitmentsButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.display)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // display
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(670, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.display.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.display.Enabled = false;
+            this.display.Location = new System.Drawing.Point(12, 30);
+            this.display.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.display.MultiSelect = false;
+            this.display.Name = "display";
+            this.display.ReadOnly = true;
+            this.display.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.display.Size = new System.Drawing.Size(780, 300);
+            this.display.TabIndex = 0;
+            this.display.TabStop = false;
             // 
-            // Display
+            // appoitmentsButton
             // 
-            this.Display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Display.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_act,
-            this.seq_name,
-            this.description,
-            this.status,
-            this.Activity_Type});
-            this.Display.Location = new System.Drawing.Point(12, 105);
-            this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(757, 195);
-            this.Display.TabIndex = 2;
+            this.appoitmentsButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.appoitmentsButton.Location = new System.Drawing.Point(422, 360);
+            this.appoitmentsButton.Name = "appoitmentsButton";
+            this.appoitmentsButton.Size = new System.Drawing.Size(370, 50);
+            this.appoitmentsButton.TabIndex = 2;
+            this.appoitmentsButton.Text = "Zlecenia";
+            this.appoitmentsButton.UseVisualStyleBackColor = false;
+            this.appoitmentsButton.Click += new System.EventHandler(this.appoitmentsButton_Click);
             // 
-            // id_act
+            // updateButton
             // 
-            this.id_act.DataPropertyName = "id_act";
-            this.id_act.HeaderText = "ID";
-            this.id_act.Name = "id_act";
-            this.id_act.ReadOnly = true;
-            // 
-            // seq_name
-            // 
-            this.seq_name.DataPropertyName = "seq_name";
-            this.seq_name.HeaderText = "Kolejność";
-            this.seq_name.Name = "seq_name";
-            this.seq_name.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Opis";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // Activity_Type
-            // 
-            this.Activity_Type.DataPropertyName = "Activity_Type";
-            this.Activity_Type.HeaderText = "Czynność";
-            this.Activity_Type.Name = "Activity_Type";
-            this.Activity_Type.ReadOnly = true;
+            this.updateButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.updateButton.Location = new System.Drawing.Point(12, 360);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(370, 50);
+            this.updateButton.TabIndex = 3;
+            this.updateButton.Text = "Aktualizuj";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // WorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Display);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(804, 431);
+            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.appoitmentsButton);
+            this.Controls.Add(this.display);
             this.Name = "WorkerWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WorkerWindow";
             this.Load += new System.EventHandler(this.WorkerWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Display)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.display)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView Display;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_act;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seq_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Activity_Type;
+        private System.Windows.Forms.DataGridView display;
+        private System.Windows.Forms.Button appoitmentsButton;
+        private System.Windows.Forms.Button updateButton;
     }
 }

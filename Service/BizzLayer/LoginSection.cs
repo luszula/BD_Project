@@ -29,9 +29,10 @@ namespace BizzLayer
 
         public static Personel Login(string uname, string pass)
         {
+            DateTime date = DateTime.Today;
             var conn = new DataLayer.DataClasses1DataContext();
             Personel user = (from a in conn.Personel
-                             where a.uname == uname && a.password == MD5Hash(pass)
+                             where a.uname == uname && a.password == MD5Hash(pass) && (a.dt_exp > date || a.dt_exp == null)
                              select a).SingleOrDefault();
             return user;
         }

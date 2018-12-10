@@ -51,5 +51,28 @@ namespace Service
                 }
             }       
         }
+
+        private void textLogin_TextChanged(object sender, EventArgs e)
+        {
+            if(textLogin.Text != "" && textPass.Text != "")
+            {
+                buttonLogin.Enabled = true;
+            }else
+            {
+                buttonLogin.Enabled = false;
+            }
+        }
+
+        private void textPass_TextChanged(object sender, EventArgs e)
+        {
+            if (textLogin.Text != "" && textPass.Text != "")
+            {
+                buttonLogin.Enabled = true;
+            }
+            else
+            {
+                buttonLogin.Enabled = false;
+            }
+        }
     }
 }

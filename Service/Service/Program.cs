@@ -14,6 +14,8 @@ namespace Service
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new WorkerWindow(2));
+            
             LoginWindow login = new LoginWindow();
             Application.Run(login);
             if (login.active != null)
@@ -24,7 +26,7 @@ namespace Service
                         Application.Run(new AdminWindow());
                         break;
                     case "wor":
-                        Application.Run(new WorkerWindow());
+                        Application.Run(new WorkerWindow(login.active.id_pers));
                         break;
                     case "man":
                         Application.Run(new ManagerWindow());
@@ -33,7 +35,7 @@ namespace Service
                         MessageBox.Show("Błedna rola użytkowanika prosze skotaktować się z administratorem.");
                         break;
                 }
-            }       
+            }
         }
     }
 }

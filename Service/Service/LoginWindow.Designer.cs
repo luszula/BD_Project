@@ -45,6 +45,7 @@
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(100, 20);
             this.textLogin.TabIndex = 0;
+            this.textLogin.TextChanged += new System.EventHandler(this.textLogin_TextChanged);
             // 
             // textPass
             // 
@@ -53,6 +54,7 @@
             this.textPass.Name = "textPass";
             this.textPass.Size = new System.Drawing.Size(100, 21);
             this.textPass.TabIndex = 1;
+            this.textPass.TextChanged += new System.EventHandler(this.textPass_TextChanged);
             // 
             // imageList1
             // 
@@ -72,6 +74,7 @@
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonLogin.Enabled = false;
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonLogin.Location = new System.Drawing.Point(227, 279);
             this.buttonLogin.Name = "buttonLogin";
