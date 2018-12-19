@@ -69,7 +69,7 @@ namespace BizzLayer
         {
             var conn = new DataLayer.DataClasses1DataContext();
             List<WorkerSection> activity = (from a in conn.Activity
-                                            where a.id_pers == worker
+                                            where a.id_pers == worker && (a.status == "opn" || a.status == "pro")
                                             select new WorkerSection(a.id_act, a.seq_name, a.description, a.Request.Object.id_obj, a.Request.Object.name, a.status, a.Activity_Type.act_name)).ToList();
             return activity;
         }
@@ -78,10 +78,37 @@ namespace BizzLayer
         {
             var conn = new DataLayer.DataClasses1DataContext();
             List<int> ids = (from a in conn.Activity
-                             where a.id_pers == worker
+                             where a.id_pers == worker && (a.status == "opn" || a.status == "pro")
                              select a.id_act).ToList();
             return ids; 
         }
             
+        public static bool UpdateApoitment(int id, string update)
+        {
+            var conn = new DataLayer.DataClasses1DataContext();
+            Activity activity = (from a in conn.Activity
+                                 where a.id_act == id
+                                 select a).SingleOrDefault();
+
+            if(activity != null)
+            {
+                activity.status = update;
+                try
+                {
+                    conn.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
     }
 }

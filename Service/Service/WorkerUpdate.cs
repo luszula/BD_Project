@@ -13,18 +13,66 @@ namespace Service
 {
     public partial class WorkerUpdate : Form
     {
-        public WorkerUpdate(int workerId)
+        public WorkerUpdate(int workerId, int selection)
         {
             InitializeComponent();
             worker = workerId;
+            select = selection;
         }
 
+        public int select { get; set; }
         public int worker { get; set; }
 
         private void WorkerUpdate_Load(object sender, EventArgs e)
         {
-            List<int> ids = WorkerSection.AppoitmentsIds(worker);
-            idBox.DataSource = ids;
+            textId.Text = select.ToString();
+            List<string> options = new List<string> { "----", "Praca", "Zakończone", "Niepowodzenie" };
+            updateBox.DataSource = options;
+        }
+
+        private void updateBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(updateBox.SelectedIndex == 0)
+            {
+                updateButton.Enabled = false;
+            }
+            else
+            {
+                updateButton.Enabled = true;
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            bool success;
+            switch (updateBox.SelectedIndex)
+            {
+                case 1:
+                    success = WorkerSection.UpdateApoitment(select, "pro");
+                    break;
+                case 2:
+                    success = WorkerSection.UpdateApoitment(select, "fin");
+                    break;
+                case 3:
+                    success = WorkerSection.UpdateApoitment(select, "can");
+                    break;
+                default:
+                    success = false;
+                    break;
+            }
+
+            if (success == false)
+            {
+                MessageBox.Show("tup");
+            }
+
+            this.Close();
+
         }
     }
 }
