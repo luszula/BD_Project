@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Mod_user_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Mod_user_window.Designer.cs">
+      <DependentUpon>Add_Mod_user_window.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="WorkerWindow.Designer.cs">
       <DependentUpon>WorkerWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add_Mod_user_window.resx">
+      <DependentUpon>Add_Mod_user_window.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>

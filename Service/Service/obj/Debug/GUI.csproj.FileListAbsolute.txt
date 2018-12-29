@@ -35,3 +35,4 @@ C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\bin\Debug\DataLayer.pdb
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\bin\Debug\DataLayer.dll.config
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.WorkerUpdate.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.Add_Mod_user_window.resources
