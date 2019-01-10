@@ -53,11 +53,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivityWindow.Designer.cs">
+      <DependentUpon>ActivityWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddActivity.Designer.cs">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddActivityType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddActivityType.Designer.cs">
+      <DependentUpon>AddActivityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Mod_user_window.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Add_Mod_user_window.Designer.cs">
       <DependentUpon>Add_Mod_user_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDataWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientDataWindow.Designer.cs">
+      <DependentUpon>ClientDataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditActivity.Designer.cs">
+      <DependentUpon>EditActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
@@ -91,8 +133,29 @@
     <Compile Include="WorkerWindow.Designer.cs">
       <DependentUpon>WorkerWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActivityWindow.resx">
+      <DependentUpon>ActivityWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActivity.resx">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddActivityType.resx">
+      <DependentUpon>AddActivityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Mod_user_window.resx">
       <DependentUpon>Add_Mod_user_window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientDataWindow.resx">
+      <DependentUpon>ClientDataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditActivity.resx">
+      <DependentUpon>EditActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>

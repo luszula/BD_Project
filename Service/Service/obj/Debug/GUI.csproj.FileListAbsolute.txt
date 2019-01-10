@@ -36,3 +36,10 @@ C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\bin\Debug\DataLayer.dll
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.WorkerUpdate.resources
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.Add_Mod_user_window.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ActivityWindow.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.AddActivity.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.AddActivityType.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.AddClient.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ClientDataWindow.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.EditActivity.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.EditClient.resources

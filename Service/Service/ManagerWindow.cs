@@ -16,5 +16,17 @@ namespace Service
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClientDataWindow nw = new ClientDataWindow();
+            nw.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActivityWindow nw = new ActivityWindow();
+            nw.ShowDialog();
+        }
     }
 }
