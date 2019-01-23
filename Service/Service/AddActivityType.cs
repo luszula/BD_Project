@@ -24,17 +24,8 @@ namespace Service
             if (code.Text == "" || describe.Text == "")
             {
                 MessageBox.Show("Pozostawiono puste pola");
-                if (code.Text == "")
-                {
-                    label1.ForeColor = Color.Red;
-                }
-                if (describe.Text == "")
-                {
-                    label2.ForeColor = Color.Red;
-                }
             }
             else 
-            //if (button1.Text == "Dodaj")
             {
                 ManagerSection.Create_ActivityType(code.Text, describe.Text);
                 MessageBox.Show("Dodano nowy rodzaj czynności");

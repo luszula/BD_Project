@@ -123,12 +123,13 @@ namespace Service
             // 
             // Add_Mod_user_button
             // 
+            this.Add_Mod_user_button.BackColor = System.Drawing.Color.White;
             this.Add_Mod_user_button.Location = new System.Drawing.Point(160, 212);
             this.Add_Mod_user_button.Name = "Add_Mod_user_button";
             this.Add_Mod_user_button.Size = new System.Drawing.Size(75, 23);
             this.Add_Mod_user_button.TabIndex = 19;
             this.Add_Mod_user_button.Text = "Dodaj";
-            this.Add_Mod_user_button.UseVisualStyleBackColor = true;
+            this.Add_Mod_user_button.UseVisualStyleBackColor = false;
             this.Add_Mod_user_button.Click += new System.EventHandler(this.Add_Mod_user_button_Click);
             // 
             // Role_label
@@ -161,12 +162,13 @@ namespace Service
             // 
             // Exit_button
             // 
+            this.Exit_button.BackColor = System.Drawing.Color.White;
             this.Exit_button.Location = new System.Drawing.Point(251, 212);
             this.Exit_button.Name = "Exit_button";
             this.Exit_button.Size = new System.Drawing.Size(75, 23);
             this.Exit_button.TabIndex = 20;
             this.Exit_button.Text = "Wyjdz";
-            this.Exit_button.UseVisualStyleBackColor = true;
+            this.Exit_button.UseVisualStyleBackColor = false;
             this.Exit_button.Click += new System.EventHandler(this.Exit_button_Click);
             // 
             // Haslo_checkbox
@@ -186,6 +188,7 @@ namespace Service
             "wor",
             "man",
             "adm"});
+            this.Role_Combo_Box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Role_Combo_Box.FormattingEnabled = true;
             this.Role_Combo_Box.Items.AddRange(new object[] {
             "adm",
@@ -211,6 +214,7 @@ namespace Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(382, 247);
             this.Controls.Add(this.Help_Box);
             this.Controls.Add(this.Role_Combo_Box);

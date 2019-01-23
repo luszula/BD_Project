@@ -26,24 +26,30 @@ namespace Service
 
         private void button2_Click(object sender, EventArgs e)
         {
-            EditActivity nw = new EditActivity();
-            nw.ShowDialog();
+
+            try
+            {
+                string currIndex = dataGridView3.Rows[dataGridView3.CurrentRow.Index].Cells[0].Value.ToString();
+
+                EditActivity nw = new EditActivity(currIndex);
+                nw.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Proszę wybrać aktywność");
+            }
         }
 
         private void ActivityWindow_Load(object sender, EventArgs e)
         {
-            DataClasses1DataContext ctx = new DataClasses1DataContext();
-            dataGridView1.DataSource = (from a in ctx.Request
-                                        select new { a.id_req, a.description, a.result, a.status, a.dt_reg, a.dt_fin_cancel });
-            dataGridView3.DataSource = (from a in ctx.Activity
-                                        select new { a.id_act, a.seq_name, a.description, a.result, a.status, a.dt_reg, a.dt_fin_cancel, a.id_pers, a.act_type });
+            var data = BizzLayer.ManagerSection.GetRequestData();
+            dataGridView1.DataSource = data;
         }
 
         private void ActivityWindow_Activated(object sender, EventArgs e)
         {
-            DataClasses1DataContext ctx = new DataClasses1DataContext();
-            dataGridView3.DataSource = (from a in ctx.Activity
-                                        select new { a.id_act, a.seq_name, a.description, a.result, a.status, a.dt_reg, a.dt_fin_cancel, a.id_pers, a.act_type });
+            var data = BizzLayer.ManagerSection.ActivityData();
+            dataGridView3.DataSource = data;
         }
     }
 }

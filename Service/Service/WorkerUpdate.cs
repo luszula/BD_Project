@@ -53,13 +53,20 @@ namespace Service
             switch (updateBox.SelectedIndex)
             {
                 case 1:
-                    success = WorkerSection.UpdateApoitment(select, "pro");
+                    success = WorkerSection.UpdateApoitment(select, "pro", null, false);
                     break;
                 case 2:
-                    success = WorkerSection.UpdateApoitment(select, "fin");
+                    success = WorkerSection.UpdateApoitment(select, "fin", null, true);
                     break;
                 case 3:
-                    success = WorkerSection.UpdateApoitment(select, "can");
+                    Result data = new Result();
+                    data.ShowDialog(this);
+                    if(data.result == "" || data.result == null)
+                    {
+                        success = true;
+                        break;
+                    }
+                    success = WorkerSection.UpdateApoitment(select, "can", data.result, true);
                     break;
                 default:
                     success = false;

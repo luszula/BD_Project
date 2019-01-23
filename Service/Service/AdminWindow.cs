@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataLayer;
 using BizzLayer;
 
 namespace Service
@@ -23,7 +22,7 @@ namespace Service
 
         private void Find_user_button_Click(object sender, EventArgs e)
         {            
-           Users_DataGridviev.DataSource= (from p in AdminSection.Find_user(Lname_text_box.Text,Fname_text_box.Text,Uname_text_box.Text)
+           Users_DataGridviev.DataSource= (from p in AdminSection.Find_user(Uname_text_box.Text,Lname_text_box.Text,Fname_text_box.Text)
                                          select new { Last_Name = p.lname, First_Name = p.fname, User_Name = p.uname, Rola = p.role, Data_wygaśnięcia=p.dt_exp });
                 
         }
@@ -38,7 +37,7 @@ namespace Service
            // this.Hide();
             Add_Mod_user_window nw= new Add_Mod_user_window(0);
             nw.ShowDialog();
-            Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Lname_text_box.Text, Fname_text_box.Text, Uname_text_box.Text)
+            Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Uname_text_box.Text,Lname_text_box.Text, Fname_text_box.Text )
                                              select new { Last_Name = p.lname, First_Name = p.fname, User_Name = p.uname, Rola = p.role, Data_wygaśnięcia = p.dt_exp });
 
         }
@@ -56,15 +55,15 @@ namespace Service
             {
                 MessageBox.Show("Proszę wybrać użytkownika");
             }
-            Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Lname_text_box.Text, Fname_text_box.Text, Uname_text_box.Text)
+            Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Uname_text_box.Text,Lname_text_box.Text, Fname_text_box.Text)
                                              select new { Last_Name = p.lname, First_Name = p.fname, User_Name = p.uname, Rola = p.role, Data_wygaśnięcia = p.dt_exp });
 
         }
 
         private void AdminWindow_Load(object sender, EventArgs e)
         {
-            Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Lname_text_box.Text, Fname_text_box.Text, Uname_text_box.Text)
-                                             select new { Last_Name = p.lname, First_Name = p.fname, User_Name = p.uname, Rola = p.role, Data_wygaśnięcia = p.dt_exp });
+           // Users_DataGridviev.DataSource = (from p in AdminSection.Find_user(Lname_text_box.Text, Fname_text_box.Text, Uname_text_box.Text)
+           //                                  select new { Last_Name = p.lname, First_Name = p.fname, User_Name = p.uname, Rola = p.role, Data_wygaśnięcia = p.dt_exp });
         }
 
         //private void Delete_User_Button_Click(object sender, EventArgs e)

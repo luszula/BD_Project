@@ -32,7 +32,6 @@ namespace Service
                 MessageBox.Show("Pozostawiono puste pola");
             }
             else 
-            //(button1.Text == "Dodaj")
             {
                 ManagerSection.Create_Client(Fname.Text, Lname.Text, Tel.Text, StreetName.Text, Post.Text, Number.Text, CName.Text);
                 MessageBox.Show("Dodano klienta");

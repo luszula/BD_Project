@@ -24,40 +24,9 @@ namespace Service
                 if (seq.Text == "" || description.Text == ""  || status.Text == "" || startdate.Text == ""  || idreq.Text == "" || type.Text == "")
                 {
                     MessageBox.Show("Pozostawiono puste pola");
-                    if (seq.Text == "")
-                    {
-                        label1.ForeColor = Color.Red;
-                    }
-
-                    if (description.Text == "")
-                    {
-                        label2.ForeColor = Color.Red;
-                    }
-                   
-                    if (status.Text == "")
-                    {
-                        label3.ForeColor = Color.Red;
-                    }
-
-                    if (startdate.Text == "")
-                    {
-                        label4.ForeColor = Color.Red;
-                    }
-                   
-                    if (idreq.Text == "")
-                    {
-                        label5.ForeColor = Color.Red;
-                    }
-
-                    if (type.Text == "")
-                    {
-                        label6.ForeColor = Color.Red;
-                    }
-
                 }
 
                 else 
-                //(button1.Text == "Dodaj czynność")
                 {
                     int convert = Int32.Parse(idreq.Text);
 
@@ -83,11 +52,7 @@ namespace Service
 
         private void AddActivity_Load(object sender, EventArgs e)
         {
-
-            status.Items.Add("opn");
-            status.Items.Add("pro");
-            status.Items.Add("can");
-            status.Items.Add("fin");
+            status.Text = "opn";
             DateTime actualdate = DateTime.Now;
             string convert=actualdate.ToString("dd/MM/yyyy HH:mm");
             startdate.Text = convert;
@@ -95,13 +60,16 @@ namespace Service
 
             using (DataClasses1DataContext ctx = new DataClasses1DataContext())
             {
-                var q = ctx.Activity_Type.Select(c => new { c.act_type });
+                var q = ctx.Activity_Type.Select(c => new { c.act_type, c.act_name });
                 type.DataSource = q.ToList();
                 type.DisplayMember = "act_type";
+                type.ValueMember = "act_name";
+                type.SelectedIndex = -1;
 
-                var qq = ctx.Request.Select(c => new { c.id_req });
+                var qq = ctx.Request.Select(d => new { d.id_req });
                 idreq.DataSource = qq.ToList();
                 idreq.DisplayMember = "id_req";
+                idreq.SelectedIndex = -1;
             };
 
         }

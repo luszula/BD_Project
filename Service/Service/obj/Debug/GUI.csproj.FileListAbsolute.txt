@@ -43,3 +43,14 @@ C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.AddCl
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ClientDataWindow.resources
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.EditActivity.resources
 C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.EditClient.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.Result.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ActivitySelect.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.WorkerSelect.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ManagerWindow.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ActivityManager.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ClientSelect.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.PersReqDisplay.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.ManagerObject.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.id_obiekt.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.id_pracownik.resources
+C:\Users\HelixV2\Source\Repos\BD_Project\Service\Service\obj\Debug\Service.Request.resources

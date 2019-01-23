@@ -28,7 +28,7 @@ namespace Service
             
         }
 
-        private void appoitmentsButton_Click(object sender, EventArgs e)
+        private void refresh()
         {
             activity = WorkerSection.Appoitments(worker);
             display.Columns.Clear();
@@ -41,12 +41,18 @@ namespace Service
             updateButton.Enabled = false;
         }
 
+        private void appoitmentsButton_Click(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
         private void updateButton_Click(object sender, EventArgs e)
         {
             int selected = display.CurrentCell.RowIndex;
             int selectedId = activity[selected].Id;
             WorkerUpdate dataChange = new WorkerUpdate(worker, selectedId);
-            dataChange.Show(this);
+            dataChange.ShowDialog(this);
+            refresh();
         }
 
         private void display_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -23,24 +23,36 @@ namespace Service
         {
             AddClient nw = new AddClient();
             nw.ShowDialog();
+
+            var data = BizzLayer.ManagerSection.GetClientAllData();
+            dataGridView2.DataSource = data;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            EditClient nw = new EditClient();
-            nw.ShowDialog();
+            try
+            {
+                string currIndex = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+
+                EditClient nw = new EditClient(currIndex);
+                nw.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Proszę wybrać klienta");
+            }
+
+            dataGridView2.DataSource = (from a in ManagerSection.Find_user(idszukaj.Text, companyszukaj.Text, nameszukaj.Text, lnameszukaj.Text)
+                                        select new { ID_Klienta = a.id_cli, Nazwa_firmy = a.name, Imię = a.fname, Nazwisko = a.lname, Telefon = a.tel, Ulica = a.street_name, Kod_pocztowy = a.post_code, Numer_domu = a.number });
+
         }
 
-        private void ClientDataWindow_Load(object sender, EventArgs e)
+        private void szukaj_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext ctx = new DataClasses1DataContext();
-            dataGridView2.DataSource = (from row in ctx.Client select row);
-        }
 
-        private void ClientDataWindow_Activated(object sender, EventArgs e)
-        {
-            DataClasses1DataContext ctx = new DataClasses1DataContext();
-            dataGridView2.DataSource = (from row in ctx.Client select row);
+            dataGridView2.DataSource = (from a in ManagerSection.Find_user(idszukaj.Text, companyszukaj.Text, nameszukaj.Text, lnameszukaj.Text)
+                                        select new { ID_Klienta = a.id_cli, Nazwa_firmy = a.name, Imię = a.fname, Nazwisko = a.lname, Telefon = a.tel, Ulica = a.street_name, Kod_pocztowy = a.post_code, Numer_domu = a.number });
+
         }
     }
 }

@@ -53,6 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivityManager.designer.cs">
+      <DependentUpon>ActivityManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActivitySelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivitySelect.Designer.cs">
+      <DependentUpon>ActivitySelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActivityWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     <Compile Include="ClientDataWindow.Designer.cs">
       <DependentUpon>ClientDataWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientSelect.designer.cs">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditActivity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +118,18 @@
     </Compile>
     <Compile Include="EditClient.Designer.cs">
       <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="id_obiekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="id_obiekt.Designer.cs">
+      <DependentUpon>id_obiekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="id_pracownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="id_pracownik.Designer.cs">
+      <DependentUpon>id_pracownik.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.cs">
       <SubType>Form</SubType>
@@ -113,14 +143,44 @@
     <Compile Include="AdminWindow.Designer.cs">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerObejct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerObejct.designer.cs">
+      <DependentUpon>ManagerObejct.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerWindow.Designer.cs">
       <DependentUpon>ManagerWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersReqDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersReqDisplay.designer.cs">
+      <DependentUpon>PersReqDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerSelect.Designer.cs">
+      <DependentUpon>WorkerSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkerUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +193,12 @@
     <Compile Include="WorkerWindow.Designer.cs">
       <DependentUpon>WorkerWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActivityManager.resx">
+      <DependentUpon>ActivityManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivitySelect.resx">
+      <DependentUpon>ActivitySelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActivityWindow.resx">
       <DependentUpon>ActivityWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,17 +217,35 @@
     <EmbeddedResource Include="ClientDataWindow.resx">
       <DependentUpon>ClientDataWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientSelect.resx">
+      <DependentUpon>ClientSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditActivity.resx">
       <DependentUpon>EditActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="id_obiekt.resx">
+      <DependentUpon>id_obiekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="id_pracownik.resx">
+      <DependentUpon>id_pracownik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerObejct.resx">
+      <DependentUpon>ManagerObejct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerWindow.resx">
+      <DependentUpon>ManagerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersReqDisplay.resx">
+      <DependentUpon>PersReqDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,6 +257,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Request.resx">
+      <DependentUpon>Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerSelect.resx">
+      <DependentUpon>WorkerSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkerUpdate.resx">
       <DependentUpon>WorkerUpdate.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,7 +10,7 @@ namespace BizzLayer
     public class AdminSection
     {
 
-        public static IQueryable<Personel> Find_user(string last_name, string first_name, string user_name)
+        public static IQueryable<Personel> Find_user(string user_name = "",string last_name="", string first_name="")
         {
             {
                 DataClasses1DataContext ctx = new DataClasses1DataContext();
@@ -27,7 +27,7 @@ namespace BizzLayer
                 if (last_name != "")
                 {
                     zap1 = (from p in ctx.Personel
-                            where (p.lname == last_name)
+                            where  (p.lname.StartsWith(last_name))
                             select p);
                 }
                 else
@@ -36,7 +36,7 @@ namespace BizzLayer
                 if (first_name != "")
                 {
                     zap2 = (from p in zap1
-                            where (p.fname == first_name)
+                            where (p.fname.StartsWith(first_name))
                             select p);
                 }
                 else
@@ -45,7 +45,7 @@ namespace BizzLayer
                 if (user_name != "")
                 {
                     return zap3 = (from p in zap2
-                                   where (p.uname == user_name)
+                                   where (p.uname.StartsWith(user_name))
                                    select p);
                 }
                 else
@@ -84,7 +84,7 @@ namespace BizzLayer
                          
                     conn.Personel.InsertOnSubmit(new_per);
                     conn.SubmitChanges();
-                    return "Pomyslnie dodano do BD: " + user_name;
+                    return "Pomyslnie dodano do BD: "+user_name;
                 }
 
 

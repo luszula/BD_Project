@@ -83,7 +83,7 @@ namespace BizzLayer
             return ids; 
         }
             
-        public static bool UpdateApoitment(int id, string update)
+        public static bool UpdateApoitment(int id, string update, string result, bool date)
         {
             var conn = new DataLayer.DataClasses1DataContext();
             Activity activity = (from a in conn.Activity
@@ -92,7 +92,16 @@ namespace BizzLayer
 
             if(activity != null)
             {
+                if (date == true)
+                {
+                    activity.dt_fin_cancel = DateTime.Today;
+                }
+                else
+                {
+                    activity.dt_fin_cancel = null;
+                }
                 activity.status = update;
+                activity.result = result;
                 try
                 {
                     conn.SubmitChanges();

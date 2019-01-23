@@ -18,43 +18,10 @@ namespace Service
         int choice;
         public Add_Mod_user_window(int choicee, string UnameG = "")
         {
-            //if (choice == 0)
-            //{
-            UnameGG = UnameG;
-            choice = choicee;
+            UnameGG = UnameG;//user który bedzie edytowany
+            choice = choicee;//dodanie lub edycja
             InitializeComponent();
 
-            // //   Pass1_text_box.PasswordChar = Pass_text_box.PasswordChar = '*';
-            //}
-            //else if (choice == 1)
-            //{
-            //    UnameGG = UnameG;
-            //    InitializeComponent_sz();
-            //    DataClasses1DataContext conn_str = new DataClasses1DataContext();
-            //    var sz_zap = conn_str.Personels.Where(p => (p.uname == UnameG)).First();
-            //    Lname_text_box.Text = sz_zap.lname;
-            //    Fname_text_box.Text = sz_zap.fname;
-            //    Uname_text_box.Text = sz_zap.uname;
-            //    Role_text_box.Text = sz_zap.role;
-            ////    Pass1_text_box.PasswordChar = Pass_text_box.PasswordChar = '*';
-            //    Pass_text_box.Text = Pass1_text_box.Text = "nowe haslo";
-            //    string wzor = "dd.MM.yyyy";
-            //    string data_z_bazy = "01.01.2000";//ustawia jesli w bazie jest null
-            //    DateTime pomo_date;
-
-            //    if (sz_zap.dt_exp != null)
-            //    {
-
-            //        data_z_bazy = sz_zap.dt_exp.Value.ToString(wzor);
-            //        pomo_date = sz_zap.dt_exp.Value;
-            //    }
-            //    else
-            //    {
-            //        pomo_date = DateTime.ParseExact(data_z_bazy, wzor, null);
-
-            //    }
-            //    Dt_exp_picker.Value = pomo_date;
-            //}
         }
         private void Add_Mod_user_window_Load(object sender, EventArgs e)
         {
@@ -69,29 +36,28 @@ namespace Service
             {
 
                 Add_Mod_user_button.Text = "Zapisz";
-                DataClasses1DataContext conn_str = new DataClasses1DataContext();
-                var sz_zap = conn_str.Personel.Where(p => (p.uname == UnameGG)).First();
-                Lname_text_box.Text = sz_zap.lname;
-                Fname_text_box.Text = sz_zap.fname;
-                Role_Combo_Box.Text = sz_zap.role;
+                var sz_zap = AdminSection.Find_user(UnameGG);
+                Lname_text_box.Text = (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.lname)).Single();
+                Fname_text_box.Text = (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.fname)).Single();
+                Role_Combo_Box.Text = (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.role)).Single(); 
                 Pass_text_box.Text = Pass1_text_box.Text = "nowe haslo";
                 string wzor = "dd.MM.yyyy";
                 string data_z_bazy = "01.01.2000";//ustawia jesli w bazie jest null
-                Open_label.Text = "Modyfikuj użytkownika: " + sz_zap.uname;
+                Open_label.Text = "Modyfikuj użytkownika: " + (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.uname)).Single(); ;
                 Help_Box.Text = "Należy wprowadzić tylko wartości wymagające modyfikacji";
 
                 DateTime pomo_date;
 
-                if (sz_zap.dt_exp != null)
+                if ((sz_zap.Where(p => p.uname == UnameGG).Select(p => p.dt_exp)).Single() != null)
                 {
-
-                    data_z_bazy = sz_zap.dt_exp.Value.ToString(wzor);
-                    pomo_date = sz_zap.dt_exp.Value;
+          
+                    data_z_bazy = (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.dt_exp)).Single().Value.ToString(wzor);
+                    pomo_date = (sz_zap.Where(p => p.uname == UnameGG).Select(p => p.dt_exp)).Single().Value;
                 }
                 else
                 {
                     pomo_date = DateTime.ParseExact(data_z_bazy, wzor, null);
-
+          
                 }
                 Dt_exp_picker.Value = pomo_date;
             }

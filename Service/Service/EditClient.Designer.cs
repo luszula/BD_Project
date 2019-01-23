@@ -35,7 +35,6 @@
             this.street = new System.Windows.Forms.TextBox();
             this.postcode = new System.Windows.Forms.TextBox();
             this.number = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.edit = new System.Windows.Forms.ComboBox();
+            this.edit = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // name
@@ -97,34 +96,25 @@
             this.number.Size = new System.Drawing.Size(100, 20);
             this.number.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(297, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Pobierz dane";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 18);
+            this.label1.Size = new System.Drawing.Size(160, 18);
             this.label1.TabIndex = 9;
-            this.label1.Text = "ID klienta do edycji";
+            this.label1.Text = "ID edytowanego klienta";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(386, 9);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(330, 9);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
+            this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 10;
             this.button2.Text = "Potwierdź";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label2
@@ -132,9 +122,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Nazwa";
+            this.label2.Text = "Nazwa firmy";
             // 
             // label3
             // 
@@ -192,16 +182,17 @@
             // 
             // edit
             // 
-            this.edit.FormattingEnabled = true;
-            this.edit.Location = new System.Drawing.Point(153, 13);
+            this.edit.Location = new System.Drawing.Point(178, 14);
             this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(121, 21);
-            this.edit.TabIndex = 18;
+            this.edit.ReadOnly = true;
+            this.edit.Size = new System.Drawing.Size(69, 20);
+            this.edit.TabIndex = 20;
             // 
             // EditClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(497, 208);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.label8);
@@ -213,7 +204,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.number);
             this.Controls.Add(this.postcode);
             this.Controls.Add(this.street);
@@ -223,7 +213,6 @@
             this.Controls.Add(this.name);
             this.Name = "EditClient";
             this.Text = "EditClient";
-            this.Load += new System.EventHandler(this.EditClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +226,6 @@
         private System.Windows.Forms.TextBox street;
         private System.Windows.Forms.TextBox postcode;
         private System.Windows.Forms.TextBox number;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
@@ -247,6 +235,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox edit;
+        private System.Windows.Forms.TextBox edit;
     }
 }

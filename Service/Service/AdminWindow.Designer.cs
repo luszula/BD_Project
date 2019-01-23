@@ -115,32 +115,35 @@
             // 
             // Find_user_button
             // 
+            this.Find_user_button.BackColor = System.Drawing.Color.White;
             this.Find_user_button.Location = new System.Drawing.Point(512, 24);
             this.Find_user_button.Name = "Find_user_button";
             this.Find_user_button.Size = new System.Drawing.Size(75, 23);
             this.Find_user_button.TabIndex = 9;
             this.Find_user_button.Text = "Szukaj";
-            this.Find_user_button.UseVisualStyleBackColor = true;
+            this.Find_user_button.UseVisualStyleBackColor = false;
             this.Find_user_button.Click += new System.EventHandler(this.Find_user_button_Click);
             // 
             // New_user_button
             // 
+            this.New_user_button.BackColor = System.Drawing.Color.White;
             this.New_user_button.Location = new System.Drawing.Point(28, 76);
             this.New_user_button.Name = "New_user_button";
             this.New_user_button.Size = new System.Drawing.Size(75, 23);
             this.New_user_button.TabIndex = 10;
             this.New_user_button.Text = "Dodaj";
-            this.New_user_button.UseVisualStyleBackColor = true;
+            this.New_user_button.UseVisualStyleBackColor = false;
             this.New_user_button.Click += new System.EventHandler(this.New_user_button_Click);
             // 
             // Mod_User_Button
             // 
+            this.Mod_User_Button.BackColor = System.Drawing.Color.White;
             this.Mod_User_Button.Location = new System.Drawing.Point(119, 76);
             this.Mod_User_Button.Name = "Mod_User_Button";
             this.Mod_User_Button.Size = new System.Drawing.Size(75, 23);
             this.Mod_User_Button.TabIndex = 11;
             this.Mod_User_Button.Text = "Edytuj";
-            this.Mod_User_Button.UseVisualStyleBackColor = true;
+            this.Mod_User_Button.UseVisualStyleBackColor = false;
             this.Mod_User_Button.Click += new System.EventHandler(this.Mod_User_Button_Click);
             // 
             // label6
@@ -154,17 +157,19 @@
             // 
             // Exit_Button
             // 
+            this.Exit_Button.BackColor = System.Drawing.Color.White;
             this.Exit_Button.Location = new System.Drawing.Point(512, 76);
             this.Exit_Button.Name = "Exit_Button";
             this.Exit_Button.Size = new System.Drawing.Size(75, 23);
             this.Exit_Button.TabIndex = 14;
             this.Exit_Button.Text = "Wyjdź";
-            this.Exit_Button.UseVisualStyleBackColor = true;
+            this.Exit_Button.UseVisualStyleBackColor = false;
             this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
             // 
             // AdminWindow
             // 
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(604, 361);
             this.Controls.Add(this.Exit_Button);
             this.Controls.Add(this.label6);

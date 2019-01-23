@@ -15,36 +15,45 @@ namespace Service
 {
     public partial class EditActivity : Form
     {
-        public EditActivity()
+        public EditActivity(string id)
         {
-            InitializeComponent(); 
-        }
+            InitializeComponent();
 
-        private void EditActivity_Load(object sender, EventArgs e)
-        {
-            DataClasses1DataContext ctx = new DataClasses1DataContext();
-            dataGridView1.DataSource = (from a in ctx.Personel
-                                        where (a.role == "wor")
-                                        select new { a.id_pers, a.fname, a.lname, a.role, a.uname });
-
-            using (DataClasses1DataContext cont = new DataClasses1DataContext())
+            using (DataClasses1DataContext ctx = new DataClasses1DataContext())
             {
-                var q = cont.Activity.Select(c => new { c.id_act });
-                activity.DataSource = q.ToList();
-                activity.DisplayMember = "id_act";
-
-                var qq = (from a in ctx.Personel
-                          where (a.role == "wor")
-                          select new { a.id_pers });
-                worker.DataSource = qq.ToList();
-                worker.DisplayMember = "id_pers";
+                activity.Text = id;
             };
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    private void button1_Click(object sender, EventArgs e)
         {
-            ManagerSection.Edit_Activity(activity.Text, worker.Text);
+            if (worker.Text != "" && worker.Text != "0")
+            {
+                ManagerSection.Edit_Activity(activity.Text, worker.Text);
+            }
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            ActivitySelect actDialog = new ActivitySelect();
+            if (actDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                id = actDialog._ID;
+            }
+            activity.Text = id.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int id = 0;
+            WorkerSelect workerDialog = new WorkerSelect();
+            if (workerDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                id = workerDialog._ID;
+            }
+            worker.Text = id.ToString();
         }
     }
 
