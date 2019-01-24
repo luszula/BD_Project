@@ -31,10 +31,18 @@ namespace BizzLayer
         {
             DateTime date = DateTime.Today;
             var conn = new DataLayer.DataClasses1DataContext();
-            Personel user = (from a in conn.Personel
-                             where a.uname == uname && a.password == MD5Hash(pass) && (a.dt_exp > date || a.dt_exp == null)
-                             select a).SingleOrDefault();
-            return user;
+            try
+            {
+                Personel user = (from a in conn.Personel
+                                 where a.uname == uname && a.password == MD5Hash(pass) && (a.dt_exp > date || a.dt_exp == null)
+                                 select a).SingleOrDefault();
+                return user;
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
     }
 }

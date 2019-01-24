@@ -42,7 +42,7 @@
   </Table>
   <Table Name="dbo.Object" Member="Object">
     <Type Name="Object">
-      <Column Name="id_obj" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_obj" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="id_cli" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="code_type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />

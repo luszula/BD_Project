@@ -228,23 +228,24 @@ namespace BizzLayer
                 {
                     name = nameNew,
                     code_type = code,
-                    id_cli = clientIdNew
+                    id_cli = clientIdNew,
                 };
+
                 if (code == null)
                 {
                     return "Wybrano niepoprawny obiekt";
                 }
                 else {
 
-                   // try
+                    try
                     {
                         connection.Object.InsertOnSubmit(addNew);
                         connection.SubmitChanges();
-                        return "zakonczono powodzeniem";
+                        return "Zakończono powodzeniem";
                     }
-                    //catch
+                    catch
                     {
-                        return "zakonczono niepowodzeniem";
+                        return "Zakończono niepowodzeniem";
                     }
                 }
             }
@@ -252,7 +253,7 @@ namespace BizzLayer
             
         }
 
-        public static void EditObject(int currentId, string selected, string name, string clientId)
+        public static string EditObject(int currentId, string selected, string name, string clientId)
         {
 
             using (DataClasses1DataContext connection = new DataClasses1DataContext())
@@ -267,7 +268,15 @@ namespace BizzLayer
                 {
                     updtObj.id_cli = cid;
                 }
-                connection.SubmitChanges();
+                try
+                {
+                    connection.SubmitChanges();
+                    return "Zakończono powodzeniem";
+                }
+                catch
+                {
+                    return "Zakończono niepowodzeniem";
+                }
             }
         }
 
@@ -382,13 +391,21 @@ namespace BizzLayer
             }
         }
 
-        public static void EditStatus(int currentId, string selectedItem)
+        public static string EditStatus(int currentId, string selectedItem)
         {
             using (DataClasses1DataContext connection = new DataClasses1DataContext())
             {
                 DataLayer.Activity updtStatus = connection.Activity.SingleOrDefault(x => x.id_act == currentId);
                 updtStatus.status = selectedItem;
-                connection.SubmitChanges();
+                try
+                {
+                    connection.SubmitChanges();
+                    return "Zakończono powodzeniem";
+                }
+                catch
+                {
+                    return "Zakończono niepowodzeniem";
+                }
             }
         }
 
@@ -465,13 +482,13 @@ namespace BizzLayer
 
 
 
-        public static void RequestADD(int Id_req, string Description, string Result, string Status, DateTime Dt_req, int Id_obj, int Id_pers)
+        public static void RequestADD(string Description, string Result, string Status, DateTime Dt_req, int Id_obj, int Id_pers)
         {
             using (DataClasses1DataContext ctx = new DataClasses1DataContext())
             {
                 Request newRequest = new Request
                 {
-                    id_req = Id_req,
+                   
                     description = Description,
                     result = Result,
                     status = Status,

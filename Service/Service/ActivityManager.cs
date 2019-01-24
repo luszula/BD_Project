@@ -86,7 +86,8 @@ namespace Service
 		{
 			int currentId = GetCurrentId();
 			string selectedtem = statusComboBox.SelectedItem.ToString();
-			BizzLayer.ManagerSection.EditStatus(currentId, selectedtem);
+			string val = BizzLayer.ManagerSection.EditStatus(currentId, selectedtem);
+            MessageBox.Show(val);
 
 			var data = BizzLayer.ManagerSection.GetActivityData();
 			ActivityDataGridView.DataSource = data;

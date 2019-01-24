@@ -49,7 +49,7 @@ namespace Service
             options3.Add("nie powodzenie");
             options3.Add("powodzenie");
    
-            comboBox3.DataSource = options3;
+            //comboBox3.DataSource = options3;
         }
         private void Request_Load(object sender, EventArgs e)
         {
@@ -64,9 +64,9 @@ namespace Service
             dataGridView1.DataSource = ManagerSection.Get_Data();
             dataGridView1.Update();
             dataGridView1.Refresh();
-            string drugie_id = dataGridView1.Rows[dataGridView1.RowCount-1].Cells[0].Value.ToString();
-            int id = Int32.Parse(drugie_id)+1;
-            textBox2.Text = id.ToString(); 
+            // string drugie_id = dataGridView1.Rows[dataGridView1.RowCount-1].Cells[0].Value.ToString();
+            // int id = Int32.Parse(drugie_id)+1;
+            textBox2.Text = "?";//id.ToString(); 
         }
 
         private void GetData2(int pozdro)
@@ -88,21 +88,22 @@ namespace Service
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.SelectedIndex == 1 || comboBox3.SelectedIndex == 2)
-            {
-                textBox3.Enabled = false;
-                textBox4.Enabled = false;
-                richTextBox1.Enabled = false;
-                comboBox2.Enabled = false;
-            }
-            else
-            {
-                textBox3.Enabled = true;
-                textBox4.Enabled = true;
-                richTextBox1.Enabled = true;
-                comboBox2.Enabled = true;
-            }
-        }     
+            /* if (comboBox3.SelectedIndex == 1 || comboBox3.SelectedIndex == 2)
+             {
+                 textBox3.Enabled = false;
+                 textBox4.Enabled = false;
+                 richTextBox1.Enabled = false;
+                 comboBox2.Enabled = false;
+             }
+             else
+             {
+                 textBox3.Enabled = true;
+                 textBox4.Enabled = true;
+                 richTextBox1.Enabled = true;
+                 comboBox2.Enabled = true;
+             }
+         }     */
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
          
@@ -150,14 +151,14 @@ namespace Service
             else
             {
                 
-                int id_request = Int32.Parse(textBox2.Text);
+                //int id_request = Int32.Parse(textBox2.Text);
                 int id_klient = System.Int32.Parse(textBox3.Text);
                 int id_obiektu = System.Int32.Parse(textBox4.Text);
 
-                string box3 = comboBox3.SelectedValue.ToString();
+                //string box3 = comboBox3.SelectedValue.ToString();
                 string box2 = comboBox2.SelectedValue.ToString();
 
-                ManagerSection.RequestADD(id_request, richTextBox1.Text, box3, box2, DateTime.Now, id_obiektu, id_klient);
+                ManagerSection.RequestADD(richTextBox1.Text, richTextBox2.Text, box2, DateTime.Now, id_obiektu, id_klient);
                     label3.ForeColor = Color.Black;
                     label9.ForeColor = Color.Black;
                     label8.ForeColor = Color.Black;
@@ -278,10 +279,10 @@ namespace Service
                     int id_klient = System.Int32.Parse(textBox3.Text);
                     int id_obiektu = System.Int32.Parse(textBox4.Text);
 
-                    string box3 = comboBox3.SelectedValue.ToString();
+                    //string box3 = comboBox3.SelectedValue.ToString();
                     string box2 = comboBox2.SelectedValue.ToString();
                  
-                    ManagerSection.RequestEDIT(id_request, richTextBox1.Text, box3, box2, id_obiektu, id_klient, DateTime.Now);
+                    ManagerSection.RequestEDIT(id_request, richTextBox1.Text, richTextBox2.Text, box2, id_obiektu, id_klient, DateTime.Now);
                     label3.ForeColor = Color.Black;
                     label9.ForeColor = Color.Black;
                     label8.ForeColor = Color.Black;
@@ -301,13 +302,14 @@ namespace Service
             string id_obj = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
             string descripion = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
             string status = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            //string result = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            string result = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             textBox2.Text = id_req;
             textBox3.Text = id_kienta;
             textBox4.Text = id_obj;
             richTextBox1.Text = descripion;
             comboBox2.Text = status;
-           // comboBox3.Text = result;
+            // comboBox3.Text = result;
+           richTextBox2.Text = result;
         }
 
         private void refresh()
@@ -319,7 +321,8 @@ namespace Service
             textBox4.Text = "";
             richTextBox1.Text = "";
             comboBox2.Text = "";
-            comboBox3.Text = "";
+            //comboBox3.Text = "";
+           richTextBox2.Text = "";
 
         }
 
@@ -343,6 +346,11 @@ namespace Service
                 id = nw.IDD;
             }
             textBox4.Text = id.ToString();
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -110,7 +110,8 @@ namespace Service
 			string selected = eNameTypeComboBox.SelectedItem.ToString();
 			string name = eNameTextBox.Text;
 			string clientId = eClientIdTextBox.Text;
-			BizzLayer.ManagerSection.EditObject(currentId, selected,name,clientId);
+			string val = BizzLayer.ManagerSection.EditObject(currentId, selected,name,clientId);
+            MessageBox.Show(val);
 
 			var data = BizzLayer.ManagerSection.GetObjData();
 			objDataGridView.DataSource = data;
