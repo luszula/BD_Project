@@ -37,15 +37,18 @@ namespace Service
         private void menu()
         {
            List<string> options2 = new List<string>();
-            options2.Add("rozpoczecie");
-            options2.Add("w trakcie");
-            options2.Add("zakonczono");
+            options2.Add("fin");
+            options2.Add("opn");
+            options2.Add("can");
+            options2.Add("pro");
             comboBox2.DataSource = options2;
 
             List<string> options3 = new List<string>();
-            options3.Add("nie ustalono");
+
+            options3.Add("w trakcie");
+            options3.Add("nie powodzenie");
             options3.Add("powodzenie");
-            options3.Add("niepowodzenie");
+   
             comboBox3.DataSource = options3;
         }
         private void Request_Load(object sender, EventArgs e)
@@ -298,13 +301,13 @@ namespace Service
             string id_obj = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
             string descripion = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString();
             string status = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[4].Value.ToString();
-            string result = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
+            //string result = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[5].Value.ToString();
             textBox2.Text = id_req;
             textBox3.Text = id_kienta;
             textBox4.Text = id_obj;
             richTextBox1.Text = descripion;
             comboBox2.Text = status;
-            comboBox3.Text = result;
+           // comboBox3.Text = result;
         }
 
         private void refresh()

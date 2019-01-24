@@ -70,9 +70,9 @@ namespace Service
 				MessageBox.Show("Please, fill the fields!");
 			}
 			else {
-				string selected = nameTypeComboBox.SelectedItem.ToString();
 
-				BizzLayer.ManagerSection.AddNewObject(nameNew, name_typeNew, clientIdNew, selected);
+				string val = BizzLayer.ManagerSection.AddNewObject(nameNew, name_typeNew, clientIdNew);
+                MessageBox.Show(val);
 			}
 			var data = BizzLayer.ManagerSection.GetObjData();
 			objDataGridView.DataSource = data;

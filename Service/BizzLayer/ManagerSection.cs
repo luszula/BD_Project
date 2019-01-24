@@ -216,12 +216,12 @@ namespace BizzLayer
 
         ///KAROL SZUSTER
 
-        public static int AddNewObject(string nameNew, string name_typeNew, int clientIdNew, string selected)
+        public static string AddNewObject(string nameNew, string name_typeNew, int clientIdNew)
         {
             using (DataClasses1DataContext connection = new DataClasses1DataContext())
             {
                 string code = (from obj in connection.Obj_Type
-                               where obj.name_type == selected
+                               where obj.name_type == name_typeNew
                                select obj.code_type).SingleOrDefault();
 
                 DataLayer.Object addNew = new DataLayer.Object
@@ -230,11 +230,26 @@ namespace BizzLayer
                     code_type = code,
                     id_cli = clientIdNew
                 };
+                if (code == null)
+                {
+                    return "Wybrano niepoprawny obiekt";
+                }
+                else {
 
-                connection.Object.InsertOnSubmit(addNew);
-                connection.SubmitChanges();
+                   // try
+                    {
+                        connection.Object.InsertOnSubmit(addNew);
+                        connection.SubmitChanges();
+                        return "zakonczono powodzeniem";
+                    }
+                    //catch
+                    {
+                        return "zakonczono niepowodzeniem";
+                    }
+                }
             }
-            return 1;
+            
+            
         }
 
         public static void EditObject(int currentId, string selected, string name, string clientId)
